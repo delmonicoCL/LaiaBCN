@@ -155,8 +155,10 @@ function verificarRompecabezasCompleto() {
     
 }
 
+let salirSound = new Audio('assets/media/salir-sound.mp3');
+
 function salir() {
-  gameOverSound.play();
+  salirSound.play();
   var respuesta = confirm('¿Deseas cerrar?');
     if (respuesta) {
       window.location.href = 'adios.html';

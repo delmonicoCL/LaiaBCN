@@ -6,8 +6,8 @@
 
 body {
         background: #1D202B;
-        background-image: url('https://github.com/delmonicoCL/LaiaBCN/blob/main/assets/images/fondo_barcelona.jpg');
-      
+        background-image: url('https://raw.githubusercontent.com/delmonicoCL/LaiaBCN/main/assets/images/fondo_barcelona.jpg');
+        background-size: cover;
         background-position: center;
         color: #fff;
         font-family: 'Gagalin', sans-serif !important;
