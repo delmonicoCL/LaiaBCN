@@ -6,8 +6,10 @@
 
 body {
         background: #1D202B;
-        background-image:url('/assets/images/fondo_barcelona.jpg');
-       
+        background-image:url('assets/images/fondo_barcelona.jpg');
+        background-image:url(assets/images/solar.jpg);
+        background-image:url("assets/images/te_espero.png");
+        background-image:url("/assets/images/laia.jpg");
         background-position: center;
         color: #fff;
         font-family: 'Gagalin', sans-serif !important;
@@ -77,7 +79,7 @@ body {
         margin: auto;
         display: flex;
         justify-content:end;
-        background-image: url('/assets/images/banner_topxx.png'); 
+        background-image: url('assets/images/banner_topxx.png'); 
         background-size: cover; 
         background-repeat: no-repeat; 
                 }
