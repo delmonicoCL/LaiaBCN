@@ -1,41 +1,41 @@
 // Galería de imágenes para la página "eolica.html"
 var imagenesEo = [
-    { id: "drag1", src: "/images/eolica/imagen-0.jpg", area: "div1" },
-    { id: "drag2", src: "/images/eolica/imagen-1.jpg", area: "div2" },
-    { id: "drag3", src: "/images/eolica/imagen-2.jpg", area: "div3" },
-    { id: "drag4", src: "/images/eolica/imagen-3.jpg", area: "div4" },
-    { id: "drag5", src: "/images/eolica/imagen-4.jpg", area: "div5" },
-    { id: "drag6", src: "/images/eolica/imagen-5.jpg", area: "div6" },
-    { id: "drag7", src: "/images/eolica/imagen-6.jpg", area: "div7" },
-    { id: "drag8", src: "/images/eolica/imagen-7.jpg", area: "div8" },
-    { id: "drag9", src: "/images/eolica/imagen-8.jpg", area: "div9" }
+    { id: "drag1", src: "assets/images/eolica/imagen-0.jpg", area: "div1" },
+    { id: "drag2", src: "assets/images/eolica/imagen-1.jpg", area: "div2" },
+    { id: "drag3", src: "assets/images/eolica/imagen-2.jpg", area: "div3" },
+    { id: "drag4", src: "assets/images/eolica/imagen-3.jpg", area: "div4" },
+    { id: "drag5", src: "assets/images/eolica/imagen-4.jpg", area: "div5" },
+    { id: "drag6", src: "assets/images/eolica/imagen-5.jpg", area: "div6" },
+    { id: "drag7", src: "assets/images/eolica/imagen-6.jpg", area: "div7" },
+    { id: "drag8", src: "assets/images/eolica/imagen-7.jpg", area: "div8" },
+    { id: "drag9", src: "assets/images/eolica/imagen-8.jpg", area: "div9" }
   ];
   
   // Galería de imágenes para la página "solar.html"
   var imagenesSol = [
-    { id: "drag1", src: "/images/solar/imagen-0.jpg", area: "div1" },
-    { id: "drag2", src: "/images/solar/imagen-1.jpg", area: "div2" },
-    { id: "drag3", src: "/images/solar/imagen-2.jpg", area: "div3" },
-    { id: "drag4", src: "/images/solar/imagen-3.jpg", area: "div4" },
-    { id: "drag5", src: "/images/solar/imagen-4.jpg", area: "div5" },
-    { id: "drag6", src: "/images/solar/imagen-5.jpg", area: "div6" },
-    { id: "drag7", src: "/images/solar/imagen-6.jpg", area: "div7" },
-    { id: "drag8", src: "/images/solar/imagen-7.jpg", area: "div8" },
+    { id: "drag1", src: "assets/images/solar/imagen-0.jpg", area: "div1" },
+    { id: "drag2", src: "assets/images/solar/imagen-1.jpg", area: "div2" },
+    { id: "drag3", src: "assets/images/solar/imagen-2.jpg", area: "div3" },
+    { id: "drag4", src: "assets/images/solar/imagen-3.jpg", area: "div4" },
+    { id: "drag5", src: "assets/images/solar/imagen-4.jpg", area: "div5" },
+    { id: "drag6", src: "assets/images/solar/imagen-5.jpg", area: "div6" },
+    { id: "drag7", src: "assets/images/solar/imagen-6.jpg", area: "div7" },
+    { id: "drag8", src: "assets/images/solar/imagen-7.jpg", area: "div8" },
     { id: "drag9", src: "/images/solar/imagen-8.jpg", area: "div9" }
   ];
 
 
   // Galería de imágenes para la página "solar.html"
   var imagenesBat = [
-    { id: "drag1", src: "/images/bateria/imagen-0.jpg", area: "div1" },
-    { id: "drag2", src: "/images/bateria/imagen-1.jpg", area: "div2" },
-    { id: "drag3", src: "/images/bateria/imagen-2.jpg", area: "div3" },
-    { id: "drag4", src: "/images/bateria/imagen-3.jpg", area: "div4" },
-    { id: "drag5", src: "/images/bateria/imagen-4.jpg", area: "div5" },
-    { id: "drag6", src: "/images/bateria/imagen-5.jpg", area: "div6" },
-    { id: "drag7", src: "/images/bateria/imagen-6.jpg", area: "div7" },
-    { id: "drag8", src: "/images/bateria/imagen-7.jpg", area: "div8" },
-    { id: "drag9", src: "/images/bateria/imagen-8.jpg", area: "div9" }
+    { id: "drag1", src: "assets/images/bateria/imagen-0.jpg", area: "div1" },
+    { id: "drag2", src: "assets/images/bateria/imagen-1.jpg", area: "div2" },
+    { id: "drag3", src: "assets/images/bateria/imagen-2.jpg", area: "div3" },
+    { id: "drag4", src: "assets/images/bateria/imagen-3.jpg", area: "div4" },
+    { id: "drag5", src: "assets/images/bateria/imagen-4.jpg", area: "div5" },
+    { id: "drag6", src: "assets/images/bateria/imagen-5.jpg", area: "div6" },
+    { id: "drag7", src: "assets/images/bateria/imagen-6.jpg", area: "div7" },
+    { id: "drag8", src: "assets/images/bateria/imagen-7.jpg", area: "div8" },
+    { id: "drag9", src: "assets/images/bateria/imagen-8.jpg", area: "div9" }
   ];
 
 
@@ -87,7 +87,7 @@ function drag(ev) {
     ev.dataTransfer.setData("text", ev.target.id);
 }
 
-let piezaCorrectaSound = new Audio('/media/piezacorrecta.mp3');
+let piezaCorrectaSound = new Audio('assets/media/piezacorrecta.mp3');
 
 
 // Función que se activa cuando se suelta un elemento.
@@ -179,8 +179,8 @@ let timeLeft = TIME_LIMIT;
 
 
 let gameInterval = setTimeout(cuentaAtras, 1000);
-let timeSound = new Audio('/media/time.mp3');
-let gameOverSound = new Audio('/media/gameover.mp3');
+let timeSound = new Audio('assets/media/time.mp3');
+let gameOverSound = new Audio('assets/media/gameover.mp3');
 
 function cuentaAtras() {
     timePassed++;
