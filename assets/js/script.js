@@ -21,7 +21,7 @@ var imagenesEo = [
     { id: "drag6", src: "assets/images/solar/imagen-5.jpg", area: "div6" },
     { id: "drag7", src: "assets/images/solar/imagen-6.jpg", area: "div7" },
     { id: "drag8", src: "assets/images/solar/imagen-7.jpg", area: "div8" },
-    { id: "drag9", src: "/images/solar/imagen-8.jpg", area: "div9" }
+    { id: "drag9", src: "assets/images/solar/imagen-8.jpg", area: "div9" }
   ];
 
 
