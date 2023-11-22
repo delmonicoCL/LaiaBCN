@@ -6,10 +6,8 @@
 
 body {
         background: #1D202B;
-        background-image:url('assets/images/fondo_barcelona.jpg');
-        background-image:url(assets/images/solar.jpg);
-        background-image:url("assets/images/te_espero.png");
-        background-image:url("/assets/images/laia.jpg");
+        background-image: url('https: //github.com/delmonicoCL/LaiaBCN/blob/main/assets/images/fondo_barcelona.jpg');
+      
         background-position: center;
         color: #fff;
         font-family: 'Gagalin', sans-serif !important;
