@@ -6,7 +6,7 @@
 
 body {
         background: #1D202B;
-        background-image:url(/assets/images/fondo_barcelona.jpg);
+        background-image:url('/assets/images/fondo_barcelona.jpg');
        
         background-position: center;
         color: #fff;
