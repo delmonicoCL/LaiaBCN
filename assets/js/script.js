@@ -174,7 +174,7 @@ document.addEventListener("drop", verificarRompecabezasCompleto);
 
 
 // Tiempo límite en segundos
-const TIME_LIMIT = 10;
+const TIME_LIMIT = 60;
 
 let timePassed = 0;
 let timeLeft = TIME_LIMIT;
