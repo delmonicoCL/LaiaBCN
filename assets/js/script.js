@@ -124,21 +124,22 @@ function verificarRompecabezasCompleto() {
     
   if (piezasCorrectas === 9) {
       timeSound.pause();
-      alert("¡Has completado el rompecabezas! FELICIDADES");
+      // alert("¡Has completado el rompecabezas! FELICIDADES");
 
       let tiempoPorcentaje = ((timeLeft*100)/TIME_LIMIT);
       
-            alert("TIEMPO PORCENTAJE " + tiempoPorcentaje + ' ' + "");
-            
+                      
             let puntaje = (tiempoPorcentaje + 50);
             
             // Redondear a la cifra entera más cercana
             let puntajeRedondeado = Math.round(puntaje);
             
             // Convertir a un entero
-            let puntajeEntero = parseInt(puntajeRedondeado);
+    let puntajeEntero = parseInt(puntajeRedondeado);
+    
+    alert("¡Has completado el rompecabezas! FELICIDADES");
             
-            alert("Obtuviste " + puntajeEntero + ' PUNTOS En esta prueba ' + "");
+            alert("Obtuviste " + puntajeEntero + ' PUNTOS en esta prueba ' + "");
                    
                        
                     var currentPage = window.location.pathname; // Obtiene la ruta de la página actual
@@ -159,7 +160,7 @@ let salirSound = new Audio('assets/media/salir-sound.mp3');
 
 function salir() {
   salirSound.play();
-  var respuesta = confirm('¿Deseas cerrar?');
+  var respuesta = confirm('¿Deseas Salir del Juego?');
     if (respuesta) {
       window.location.href = 'adios.html';
   }
