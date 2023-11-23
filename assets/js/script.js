@@ -174,7 +174,7 @@ document.addEventListener("drop", verificarRompecabezasCompleto);
 
 
 // Tiempo límite en segundos
-const TIME_LIMIT = 60;
+const TIME_LIMIT = 10;
 
 let timePassed = 0;
 let timeLeft = TIME_LIMIT;
@@ -203,7 +203,7 @@ function cuentaAtras() {
       timeSound.pause();
       timeSound.currentTime = 0;
       gameOverSound.play();
-        
+        gameOverSound.play();
         alert("¡TIEMPO!"); // Muestra un mensaje de tiempo agotado
         gameOverSound.play();
         let result = confirm("¿Quieres volver a jugar?");
