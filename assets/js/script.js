@@ -88,7 +88,7 @@
         ev.dataTransfer.setData("text", ev.target.id);
     }
 
-    let piezaCorrectaSound = new Audio('assets/media/piezacorrecta.mp3');
+    const piezaCorrectaSound = new Audio('assets/media/piezacorrecta.mp3');
 
 
     // Función que se activa cuando se suelta un elemento.
@@ -175,7 +175,7 @@ document.addEventListener("drop", verificarRompecabezasCompleto);
 
 // BOTON SALIR DEL JUEGO //
 
-let salirSound = new Audio('assets/media/salir-sound.mp3');
+const salirSound = new Audio('assets/media/salir-sound.mp3');
 
 function salir() {
   salirSound.play();
@@ -194,8 +194,8 @@ let timePassed = 0;
 let timeLeft = TIME_LIMIT;
 
 let gameInterval = setTimeout(cuentaAtras, 1000);
-let timeSound = new Audio('assets/media/time.mp3');
-let gameOverSound = new Audio('assets/media/gameover.mp3');
+const timeSound = new Audio('assets/media/time.mp3');
+const gameOverSound = new Audio('assets/media/gameover.mp3');
 
 function cuentaAtras() {
     timePassed++;
