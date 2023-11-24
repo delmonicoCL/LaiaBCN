@@ -88,7 +88,7 @@ document.addEventListener("DOMContentLoaded", function() {
       ev.dataTransfer.setData("text", ev.target.id);
   }
 
-  let piezaCorrectaSound = new Audio('assets/media/piezacorrecta.mp3');
+  const piezaCorrectaSound = new Audio('assets/media/piezacorrecta.mp3');
 
 
   // Función que se activa cuando se suelta un elemento.
@@ -138,7 +138,7 @@ if (piezasCorrectas === 9) {
           let puntajeRedondeado = Math.round(puntaje);
           
           // Convertir a un entero
-  let puntajeEntero = parseInt(puntajeRedondeado);
+        let puntajeEntero = parseInt(puntajeRedondeado);
   
   alert("¡Has completado el rompecabezas! FELICIDADES");
           
@@ -167,18 +167,15 @@ if (piezasCorrectas === 9) {
   
 }
 
-// // Sumar los puntajes de las tres pruebas
-// var puntajeTotal = puntajeEO + puntajeSOL + puntajeBAT;
-// document.getElementById("mipuntaje").innerHTML = puntajeTotal;
 
-// // Llama a la función de verificación después de cada movimiento (en el evento "dragend")
-// document.addEventListener("drop", verificarRompecabezasCompleto);
+// Llama a la función de verificación después de cada movimiento (en el evento "dragend")
+document.addEventListener("drop", verificarRompecabezasCompleto);
 
 
 
 // BOTON SALIR DEL JUEGO //
 
-let salirSound = new Audio('assets/media/salir-sound.mp3');
+const salirSound = new Audio('assets/media/salir-sound.mp3');
 
 function salir() {
 salirSound.play();
@@ -197,8 +194,8 @@ let timePassed = 0;
 let timeLeft = TIME_LIMIT;
 
 let gameInterval = setTimeout(cuentaAtras, 1000);
-let timeSound = new Audio('assets/media/time.mp3');
-let gameOverSound = new Audio('assets/media/gameover.mp3');
+const timeSound = new Audio('assets/media/time.mp3');
+const gameOverSound = new Audio('assets/media/gameover.mp3');
 
 function cuentaAtras() {
   timePassed++;
