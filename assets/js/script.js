@@ -317,7 +317,7 @@ document.addEventListener("drop", verificarRompecabezasCompleto);
         timer:1500,
       })
       setTimeout(() => {
-        window.location.href = 'index.html';
+        window.location.href = 'adios.html';
       }, 1500);
     }  else {
       // Reanudar el tiempo si el usuario decide no salir
