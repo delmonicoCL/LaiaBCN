@@ -141,32 +141,6 @@ if (piezasCorrectas === 9) {
           // Convertir a un entero
         let puntajeEntero = parseInt(puntajeRedondeado);
   
-  // alert("¡Has completado el rompecabezas! FELICIDADES");
-  // Swal.fire({
-  //   position: "top-end",
-  //   icon: "success",
-  //   title: "Your work has been saved",
-  //   showConfirmButton: false,
-    
-  // });
-
-
-//   Swal.fire({
-//     position: "top-end",
-//     icon: "error",
-//     showDenyButton: true,
-//   showCancelButton: true,
-//   confirmButtonText: "Save",
-//   denyButtonText: `Don't save`
-// }).then((result) => {
-//   /* Read more about isConfirmed, isDenied below */
-//   if (result.isConfirmed) {
-//     Swal.fire("Saved!", "", "success");
-//   } else if (result.isDenied) {
-//     Swal.fire("Changes are not saved", "", "info");
-//   }
-// });
-         
           // puntaje de la jugada
           // alert("Obtuviste " + puntajeEntero + ' PUNTOS en esta prueba ' + "");
 
@@ -203,7 +177,7 @@ document.addEventListener("drop", verificarRompecabezasCompleto);
 // TEMPORIZADOR DE TIEMPO //
 
         const TIME_LIMIT = 
-        10;
+        60;
         let timePassed = 0;
         let timeLeft = TIME_LIMIT;
         let gameInterval;
@@ -221,7 +195,6 @@ document.addEventListener("drop", verificarRompecabezasCompleto);
         function detenerTemporizador() {
           clearTimeout(gameInterval);
         }
-
         
         function cuentaAtras() {
           const gameOverSound = new Audio('assets/media/gameover.mp3');
