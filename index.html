@@ -5,52 +5,56 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
-    <link rel="stylesheet" href="/css/style.css">
-    <link rel="icon" href="/assets/images/favicon.ico" type="image/x-icon">
-    <link href="https://fonts.cdnfonts.com/css/gagalin" rel="stylesheet">
-    <script src="js/script.js"></script>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="icon" href="assets/images/favicon.ico" type="image/x-icon">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@800&family=Rammetto+One&display=swap" rel="stylesheet"> 
+    <script src="https://kit.fontawesome.com/f1d3ec1e99.js" crossorigin="anonymous"></script>
+    <script src="assets/js/script.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-
-  	<title>Juego Rompecabezas - Laia, Iluminanos</title>
-<style>
-    * {
-        padding: 0;
-        margin: 0;
-        box-sizing: border-box;
-}
-body {
-        background: #fff;
-        font-family: 'Gagalin', sans-serif !important;
-        
-}
-</style>
+   
+  	<title>Juego Rompecabezas - Bienvenidos -</title>
 </head>
 <body>
-
-    
-<div class="container-fluid d-flex justify-content-center align-items: center ">
-
    
-    <audio id="miAudio" class="miAudio" >
-       <source src="assets/media/cute-creatures.mp3" type="audio/mpeg">
-       Tu navegador no soporta la etiqueta de audio.
-    </audio>
-    
-
-
-    <video id="videoPresentacion" width="90%" height="90%" controls autoplay>
+    <div class="BarraInformacion mt-5 d-flex justify-content-around">
+    <h2 style="color: rgb(255, 254, 252)">Aprende sobre las <span style="color: rgb(32, 204, 201);">energias</span> renovables</h2>
+    </div>
+  
+	<div class="contenedor mt-2">
+      
+        
+    <video id="videoPresentacion" width="1200px" height="750px" controls autoplay>
         <source src="assets/media/bienvenides.mp4" type="video/mp4">
     </video>
-    
-    <script>
-        document.getElementById('videoPresentacion').addEventListener('click', function() {
-            window.location.href = 'solar.html';
-        });
-    </script>
-
-
       
-    </div>   
+        
+	</div>
+
+    <div class="BarraInformacion mt-2 d-flex justify-content-around " style="background-color: #f8af9b">
+    <a href="solar.html" style="text-decoration: none; color: rgb(32, 204, 201);">
+        <h2 style="color: rgb(255, 254, 252)">Vamos a Jugar</h2>
+      </a>
   
+  
+
+    </div>
+
+    <div >
+    <audio id="miAudio" class="miAudio" controls>
+   <source src="assets/media/cute-creatures.mp3" type="audio/mpeg">
+   Tu navegador no soporta la etiqueta de audio.
+</audio>
+<div>
+     
+          
+      </div>
+    </div>
+
+    
 </body>
 </html>
+
+
+
+
+

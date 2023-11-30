@@ -196,6 +196,7 @@ document.addEventListener("drop", verificarRompecabezasCompleto);
           clearTimeout(gameInterval);
         }
         
+
         function cuentaAtras() {
           const gameOverSound = new Audio('assets/media/gameover.mp3');
           timePassed++;
@@ -221,8 +222,8 @@ document.addEventListener("drop", verificarRompecabezasCompleto);
               text: '¿ DESEAS VOLVER A JUGAR ?.',
               icon: 'warning',
               showCancelButton: true,
-              confirmButtonColor: '#d3085d6',
-              cancelButtonColor: '#d33',
+              confirmButtonColor: '#fc8d72',
+              cancelButtonColor: '#517290',
               confirmButtonText: 'SI',
               cancelButtonText: 'NO', 
               showClass: {
@@ -289,8 +290,8 @@ document.addEventListener("drop", verificarRompecabezasCompleto);
     text: 'Si sales, perderás tu progreso.',
     icon: 'warning',
     showCancelButton: true,
-    confirmButtonColor: '#d33',
-    cancelButtonColor: '#d3085d6',
+    confirmButtonColor: '#fc8d72',
+    cancelButtonColor: '#517290',
     confirmButtonText: 'Salir',
     cancelButtonText: 'Volver', 
     showClass: {
