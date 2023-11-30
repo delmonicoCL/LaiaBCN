@@ -77,6 +77,11 @@ body {
         
         }
 
+        #videoPresentacion {
+                border-radius: 50px; /* Ajusta este valor según sea necesario */
+        
+        }     
+
 /* .BarraInformacion1 {
         width: 100%;
         height: 150px;
@@ -117,6 +122,11 @@ body {
         
       }
 
+
+#videoPresentacion {
+        border-radius: 50px; /* Ajusta este valor según sea necesario */
+
+}      
 /* a:link {
     color: rgb(244, 244, 247);
    }
