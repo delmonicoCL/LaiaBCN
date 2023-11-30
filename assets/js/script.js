@@ -2,80 +2,81 @@
 // CARGA LISTA DE IMAGENES A LAS VARIABLES ///
 
           // Galería de imágenes para la página "eolica.html"
-          var imagenesEo = [
-            { id: "drag1", src: "assets/images/eolica/imagen-0.jpg", area: "div1" },
-            { id: "drag2", src: "assets/images/eolica/imagen-1.jpg", area: "div2" },
-            { id: "drag3", src: "assets/images/eolica/imagen-2.jpg", area: "div3" },
-            { id: "drag4", src: "assets/images/eolica/imagen-3.jpg", area: "div4" },
-            { id: "drag5", src: "assets/images/eolica/imagen-4.jpg", area: "div5" },
-            { id: "drag6", src: "assets/images/eolica/imagen-5.jpg", area: "div6" },
-            { id: "drag7", src: "assets/images/eolica/imagen-6.jpg", area: "div7" },
-            { id: "drag8", src: "assets/images/eolica/imagen-7.jpg", area: "div8" },
-            { id: "drag9", src: "assets/images/eolica/imagen-8.jpg", area: "div9" }
-          ];
-          
-          // Galería de imágenes para la página "solar.html"
-          var imagenesSol = [
-            { id: "drag1", src: "assets/images/solar/imagen-0.jpg", area: "div1" },
-            { id: "drag2", src: "assets/images/solar/imagen-1.jpg", area: "div2" },
-            { id: "drag3", src: "assets/images/solar/imagen-2.jpg", area: "div3" },
-            { id: "drag4", src: "assets/images/solar/imagen-3.jpg", area: "div4" },
-            { id: "drag5", src: "assets/images/solar/imagen-4.jpg", area: "div5" },
-            { id: "drag6", src: "assets/images/solar/imagen-5.jpg", area: "div6" },
-            { id: "drag7", src: "assets/images/solar/imagen-6.jpg", area: "div7" },
-            { id: "drag8", src: "assets/images/solar/imagen-7.jpg", area: "div8" },
-            { id: "drag9", src: "assets/images/solar/imagen-8.jpg", area: "div9" }
-          ];
+              var imagenesEo = [
+                { id: "drag1", src: "assets/images/eolica/imagen-0.jpg", area: "div1" },
+                { id: "drag2", src: "assets/images/eolica/imagen-1.jpg", area: "div2" },
+                { id: "drag3", src: "assets/images/eolica/imagen-2.jpg", area: "div3" },
+                { id: "drag4", src: "assets/images/eolica/imagen-3.jpg", area: "div4" },
+                { id: "drag5", src: "assets/images/eolica/imagen-4.jpg", area: "div5" },
+                { id: "drag6", src: "assets/images/eolica/imagen-5.jpg", area: "div6" },
+                { id: "drag7", src: "assets/images/eolica/imagen-6.jpg", area: "div7" },
+                { id: "drag8", src: "assets/images/eolica/imagen-7.jpg", area: "div8" },
+                { id: "drag9", src: "assets/images/eolica/imagen-8.jpg", area: "div9" }
+              ];
+              
+              // Galería de imágenes para la página "solar.html"
+              var imagenesSol = [
+                { id: "drag1", src: "assets/images/solar/imagen-0.jpg", area: "div1" },
+                { id: "drag2", src: "assets/images/solar/imagen-1.jpg", area: "div2" },
+                { id: "drag3", src: "assets/images/solar/imagen-2.jpg", area: "div3" },
+                { id: "drag4", src: "assets/images/solar/imagen-3.jpg", area: "div4" },
+                { id: "drag5", src: "assets/images/solar/imagen-4.jpg", area: "div5" },
+                { id: "drag6", src: "assets/images/solar/imagen-5.jpg", area: "div6" },
+                { id: "drag7", src: "assets/images/solar/imagen-6.jpg", area: "div7" },
+                { id: "drag8", src: "assets/images/solar/imagen-7.jpg", area: "div8" },
+                { id: "drag9", src: "assets/images/solar/imagen-8.jpg", area: "div9" }
+              ];
 
 
-          // Galería de imágenes para la página "solar.html"
-          var imagenesBat = [
-            { id: "drag1", src: "assets/images/bateria/imagen-0.jpg", area: "div1" },
-            { id: "drag2", src: "assets/images/bateria/imagen-1.jpg", area: "div2" },
-            { id: "drag3", src: "assets/images/bateria/imagen-2.jpg", area: "div3" },
-            { id: "drag4", src: "assets/images/bateria/imagen-3.jpg", area: "div4" },
-            { id: "drag5", src: "assets/images/bateria/imagen-4.jpg", area: "div5" },
-            { id: "drag6", src: "assets/images/bateria/imagen-5.jpg", area: "div6" },
-            { id: "drag7", src: "assets/images/bateria/imagen-6.jpg", area: "div7" },
-            { id: "drag8", src: "assets/images/bateria/imagen-7.jpg", area: "div8" },
-            { id: "drag9", src: "assets/images/bateria/imagen-8.jpg", area: "div9" }
-          ];
-  
-// Función para cargar las imágenes en un orden aleatorio
-function cargarImagenesAleatorias(galeria) {
-  // Mezcla aleatoriamente el orden de las imágenes en el array
-  galeria.sort(function() {
-    return 0.5 - Math.random();
-  });
+              // Galería de imágenes para la página "solar.html"
+              var imagenesBat = [
+                { id: "drag1", src: "assets/images/bateria/imagen-0.jpg", area: "div1" },
+                { id: "drag2", src: "assets/images/bateria/imagen-1.jpg", area: "div2" },
+                { id: "drag3", src: "assets/images/bateria/imagen-2.jpg", area: "div3" },
+                { id: "drag4", src: "assets/images/bateria/imagen-3.jpg", area: "div4" },
+                { id: "drag5", src: "assets/images/bateria/imagen-4.jpg", area: "div5" },
+                { id: "drag6", src: "assets/images/bateria/imagen-5.jpg", area: "div6" },
+                { id: "drag7", src: "assets/images/bateria/imagen-6.jpg", area: "div7" },
+                { id: "drag8", src: "assets/images/bateria/imagen-7.jpg", area: "div8" },
+                { id: "drag9", src: "assets/images/bateria/imagen-8.jpg", area: "div9" }
+              ];
+      
+    // Función para cargar las imágenes en un orden aleatorio
+    function cargarImagenesAleatorias(galeria) {
+      // Mezcla aleatoriamente el orden de las imágenes en el array
+      galeria.sort(function() {
+        return 0.5 - Math.random();
+      });
 
-  // Obtén el elemento contenedor donde se cargarán las imágenes
-  var grilla = document.getElementById("grilla");
+      // Obtén el elemento contenedor donde se cargarán las imágenes
+      var grilla = document.getElementById("grilla");
 
-  // Crea y asigna las imágenes en el orden aleatorio a los elementos img
-  for (var i = 0; i < galeria.length; i++) {
-    let j = i + 1;
-    let cadaImagenQuevoyApintar = "<img id='" + galeria[i].id + "' class='DragContainer' src='" + galeria[i].src + "' draggable='true' ondragstart='drag(event)' areaDondeSoltar='" + galeria[i].area + "'></img>";
-    grilla.innerHTML += cadaImagenQuevoyApintar;
-  }
-}
+      // Crea y asigna las imágenes en el orden aleatorio a los elementos img
+      for (var i = 0; i < galeria.length; i++) {
+        let j = i + 1;
+        let cadaImagenQuevoyApintar = "<img id='" + galeria[i].id + "' class='DragContainer' src='" + galeria[i].src + "' draggable='true' ondragstart='drag(event)' areaDondeSoltar='" + galeria[i].area + "'></img>";
+        grilla.innerHTML += cadaImagenQuevoyApintar;
+      }
+    }
 
-  
-// Llama a la función para cargar las imágenes en un orden aleatorio después de que el DOM se haya cargado completamente
-document.addEventListener("DOMContentLoaded", function() {
-  var currentPage = window.location.pathname; // Obtiene la ruta de la página actual
+      
+    // Llama a la función para cargar las imágenes en un orden aleatorio después de que el DOM se haya cargado completamente
+    document.addEventListener("DOMContentLoaded", function() {
+      var currentPage = window.location.pathname; // Obtiene la ruta de la página actual
 
-        if (currentPage.includes("eolica.html")) {
-          cargarImagenesAleatorias(imagenesEo);
-        } else if (currentPage.includes("solar.html")) {
-          cargarImagenesAleatorias(imagenesSol);
-        } else if (currentPage.includes("bateria.html")) {
-          cargarImagenesAleatorias(imagenesBat);
-        }
+            if (currentPage.includes("eolica.html")) {
+              cargarImagenesAleatorias(imagenesEo);
+            } else if (currentPage.includes("solar.html")) {
+              cargarImagenesAleatorias(imagenesSol);
+            } else if (currentPage.includes("bateria.html")) {
+              cargarImagenesAleatorias(imagenesBat);
+            }
 
-});
+    });
 
+// CARGA LISTA DE IMAGENES A LAS VARIABLES ///
 
-///////////// DRAG AND DROP ////////////////////////////////////////
+// DRAG AND DROP ///
 
 
   // Función que se activa cuando un elemento arrastrado se encuentra sobre un área que puede recibirlo.
@@ -124,6 +125,7 @@ function verificarRompecabezasCompleto() {
   var puntajeSOL= 0;
   var puntajeEO = 0;
   var puntajeBAT = 0;
+  var puntajeFINAL = 0;
   
 
 // Si las X piezas son correctas ///  
@@ -139,14 +141,15 @@ if (piezasCorrectas === 9) {
           let puntajeRedondeado = Math.round(puntaje);
           
           // Convertir a un entero
-        let puntajeEntero = parseInt(puntajeRedondeado);
+          let puntajeEntero = parseInt(puntajeRedondeado);
   
           // puntaje de la jugada
-          // alert("Obtuviste " + puntajeEntero + ' PUNTOS en esta prueba ' + "");
+           alert("Obtuviste " + puntajeEntero + ' PUNTOS en esta prueba ' + "");
 
                   var puntajeSOL= 0;
                   var puntajeEO = 0;
                   var puntajeBAT = 0;
+  
 
                                         
                   var currentPage = window.location.pathname; // Obtiene la ruta de la página actual
@@ -167,11 +170,24 @@ if (piezasCorrectas === 9) {
 }
 
 
+//
+
+// function calcularPuntajeFinal() {
+//     var puntajeEO = parseInt(document.getElementById("puntajeEO").value);
+//     var puntajeSOL = parseInt(document.getElementById("puntajeSOL").value);
+//     var puntajeBAT = parseInt(document.getElementById("puntajeBAT").value);
+
+//     var puntajeFINAL = puntajeEO + puntajeSOL + puntajeBAT;
+
+//     // Supongamos que tienes un div con el id "miDiv"
+//     document.getElementById("miDiv").innerHTML = "Puntaje final: " + puntajeFINAL;
+// }
+
 // Llama a la función de verificación después de cada movimiento (en el evento "dragend")
 document.addEventListener("drop", verificarRompecabezasCompleto);
 
 
-
+// DRAG AND DROP ///
 
 
 // TEMPORIZADOR DE TIEMPO //
