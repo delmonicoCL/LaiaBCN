@@ -6,8 +6,8 @@
 
 body {
         background: #1D202B;
-        /* background-image: url('https://raw.githubusercontent.com/delmonicoCL/LaiaBCN/main/assets/images/fondo.png'); */
-        background-image: url('/assets/images/fondo5.png');
+        background-image: url('https://raw.githubusercontent.com/delmonicoCL/LaiaBCN/main/assets/images/fondo5.png');
+        /* background-image: url('/assets/images/fondo5.png'); */
         
         background-size: cover;
         background-position: center;
