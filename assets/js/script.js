@@ -27,7 +27,6 @@
                 { id: "drag9", src: "assets/images/solar/imagen-8.jpg", area: "div9" }
               ];
 
-
               // Galería de imágenes para la página "solar.html"
               var imagenesBat = [
                 { id: "drag1", src: "assets/images/bateria/imagen-0.jpg", area: "div1" },
@@ -59,6 +58,25 @@
       }
     }
 
+    // Funcion para generar divs contenedores de las imagenes
+    function generarContenedorPuzzle() {
+    const contenedor = document.getElementById('contenedor-puzzle');
+
+        for (let i = 1; i <= 9; i++) {
+          const nuevoDiv = document.createElement('div');
+          nuevoDiv.id = `div${i}`;
+          nuevoDiv.className = 'ImagContainer';
+          nuevoDiv.setAttribute('ondrop', `drop(event, 'div${i}')`);
+          nuevoDiv.setAttribute('ondragover', 'allowDrop(event)');
+
+          contenedor.appendChild(nuevoDiv);
+        }
+  }
+
+  // Llama a la función para generar el contenedor de puzzle después de que el DOM se haya cargado completamente
+  document.addEventListener("DOMContentLoaded", function () {
+    generarContenedorPuzzle();
+  });
       
     // Llama a la función para cargar las imágenes en un orden aleatorio después de que el DOM se haya cargado completamente
     document.addEventListener("DOMContentLoaded", function() {
@@ -73,7 +91,6 @@
             }
 
     });
-
 // CARGA LISTA DE IMAGENES A LAS VARIABLES ///
 
 // DRAG AND DROP ///
@@ -91,7 +108,6 @@
 
   const piezaCorrectaSound = new Audio('assets/media/piezacorrecta.mp3');
 
-
   // Función que se activa cuando se suelta un elemento.
   function drop(ev, areaId) {
       ev.preventDefault();
@@ -100,8 +116,6 @@
       var zonaCorrectaParaSoltarImagen = document.getElementById(areaId);
       var piezasCorrectas = 0;
       
-
-
       if (imagenQueSeArrastra.getAttribute('areaDondeSoltar') === zonaCorrectaParaSoltarImagen.id) {
           zonaCorrectaParaSoltarImagen.appendChild(imagenQueSeArrastra);
           piezaCorrectaSound.play();
@@ -110,17 +124,17 @@
 
 // Función para verificar si el rompecabezas está completo
 function verificarRompecabezasCompleto() {
-    var piezasCorrectas = 0;
+      var piezasCorrectas = 0;
 
     // Verifica que cada área tenga una imagen con el atributo areaDondeSoltar correspondiente
-  for (var i = 1; i <= 9; i++) {
-      var area = document.getElementById("div" + i);
-      var pieza = area.querySelector(".DragContainer");
+      for (var i = 1; i <= 9; i++) {
+          var area = document.getElementById("div" + i);
+          var pieza = area.querySelector(".DragContainer");
 
-      if (pieza && pieza.getAttribute("areaDondeSoltar") === "div" + i) {
-          piezasCorrectas++;
+          if (pieza && pieza.getAttribute("areaDondeSoltar") === "div" + i) {
+              piezasCorrectas++;
+          }
       }
-  }
 
   var puntajeSOL= 0;
   var puntajeEO = 0;
@@ -129,46 +143,45 @@ function verificarRompecabezasCompleto() {
   
 
 // Si las X piezas son correctas ///  
-if (piezasCorrectas === 9) {
-    timeSound.pause();
-    detenerTemporizador();
+      if (piezasCorrectas === 9) {
+          timeSound.pause();
+          detenerTemporizador();
 
-    let tiempoPorcentaje = ((timeLeft*100)/TIME_LIMIT);
-                          
-          let puntaje = (tiempoPorcentaje + 50);
-          
-          // Redondear a la cifra entera más cercana
-          let puntajeRedondeado = Math.round(puntaje);
-          
-          // Convertir a un entero
-          let puntajeEntero = parseInt(puntajeRedondeado);
-  
-          // puntaje de la jugada
-           alert("Obtuviste " + puntajeEntero + ' PUNTOS en esta prueba ' + "");
+          let tiempoPorcentaje = ((timeLeft*100)/TIME_LIMIT);
+                                
+                let puntaje = (tiempoPorcentaje + 50);
+                
+                // Redondear a la cifra entera más cercana
+                let puntajeRedondeado = Math.round(puntaje);
+                
+                // Convertir a un entero
+                let puntajeEntero = parseInt(puntajeRedondeado);
+        
+                // puntaje de la jugada
+                //  alert("Obtuviste " + puntajeEntero + ' PUNTOS en esta prueba ' + "");
 
-                  var puntajeSOL= 0;
-                  var puntajeEO = 0;
-                  var puntajeBAT = 0;
-  
+                        var puntajeSOL= 0;
+                        var puntajeEO = 0;
+                        var puntajeBAT = 0;
+        
 
-                                        
-                  var currentPage = window.location.pathname; // Obtiene la ruta de la página actual
-              
-                if (currentPage.includes("eolica.html")) {
-                   puntajeEO += puntajeEntero;
-                       window.location.href = "logradoEO.html"; 
-                    } else if (currentPage.includes("solar.html")) {
-                    puntajeSOL += puntajeEntero;
-                       window.location.href = "logradoSOL.html"; 
-                     } else if (currentPage.includes("bateria.html")) {
-                   puntajeBAT += puntajeEntero;
-                  window.location.href = "logradoBAT.html"; 
-                 }
+                                              
+                        var currentPage = window.location.pathname; // Obtiene la ruta de la página actual
                     
-      }
+                      if (currentPage.includes("eolica.html")) {
+                        puntajeEO += puntajeEntero;
+                            window.location.href = "logradoEO.html"; 
+                          } else if (currentPage.includes("solar.html")) {
+                          puntajeSOL += puntajeEntero;
+                            window.location.href = "logradoSOL.html"; 
+                          } else if (currentPage.includes("bateria.html")) {
+                        puntajeBAT += puntajeEntero;
+                        window.location.href = "logradoBAT.html"; 
+                      }
+                          
+            }
   
 }
-
 
 //
 
@@ -179,7 +192,7 @@ if (piezasCorrectas === 9) {
 
 //     var puntajeFINAL = puntajeEO + puntajeSOL + puntajeBAT;
 
-//     // Supongamos que tienes un div con el id "miDiv"
+
 //     document.getElementById("miDiv").innerHTML = "Puntaje final: " + puntajeFINAL;
 // }
 
@@ -299,47 +312,47 @@ document.addEventListener("drop", verificarRompecabezasCompleto);
 // BOTON SALIR ///
   const salirSound = new Audio('assets/media/salir-sound.mp3');
   function confirmarSalida() {
-    salirSound.play();
-    detenerTemporizador(); 
-    Swal.fire({
-    title: '¿Deseas Salir del Juego?',
-    text: 'Si sales, perderás tu progreso.',
-    icon: 'warning',
-    showCancelButton: true,
-    confirmButtonColor: '#fc8d72',
-    cancelButtonColor: '#517290',
-    confirmButtonText: 'Salir',
-    cancelButtonText: 'Volver', 
-    showClass: {
-      popup: `
-        animate__animated
-        animate__fadeInUp
-        animate__faster
-      `},
-    hideClass: {
-    popup: `
-      animate__animated
-      animate__fadeOutDown
-      animate__faster
-    `
-    },
-      
-      
-  }).then((result) => {
-    if (result.isConfirmed) {
-      Swal.fire({
-        title: '¡Hasta luego!',
-        icon:  'success',
-        showConfirmButton: false,
-        timer:1500,
-      })
-      setTimeout(() => {
-        window.location.href = 'adios.html';
-      }, 1500);
-    }  else {
-      // Reanudar el tiempo si el usuario decide no salir
-      iniciarTemporizador();
-    }
+        salirSound.play();
+        detenerTemporizador(); 
+        Swal.fire({
+        title: '¿Deseas Salir del Juego?',
+        text: 'Si sales, perderás tu progreso.',
+        icon: 'warning',
+        showCancelButton: true,
+        confirmButtonColor: '#fc8d72',
+        cancelButtonColor: '#517290',
+        confirmButtonText: 'Salir',
+        cancelButtonText: 'Volver', 
+        showClass: {
+          popup: `
+            animate__animated
+            animate__fadeInUp
+            animate__faster
+          `},
+        hideClass: {
+        popup: `
+          animate__animated
+          animate__fadeOutDown
+          animate__faster
+        `
+        },
+          
+          
+      }).then((result) => {
+        if (result.isConfirmed) {
+          Swal.fire({
+            title: '¡Hasta luego!',
+            icon:  'success',
+            showConfirmButton: false,
+            timer:1500,
+          })
+          setTimeout(() => {
+            window.location.href = 'adios.html';
+          }, 1500);
+        }  else {
+          // Reanudar el tiempo si el usuario decide no salir
+          iniciarTemporizador();
+        }
 
   });
   }

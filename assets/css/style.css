@@ -53,13 +53,13 @@ body {
         /*grid*/
         display: grid;
         grid-template-columns:repeat(3, 1fr);
-        border-radius: 15px; /* Ajusta este valor según sea necesario */
+        border-radius: 15px; 
         }
     
 .DragContainer {
         width: 200px;
         height: 200px;
-        border-radius: 15px; /* Ajusta este valor según sea necesario */
+        border-radius: 15px; 
         }    
     
 .BarraInformacion {
@@ -73,26 +73,29 @@ body {
         align-items: center;
         font-size: 35px;
         gap: 10px;
-        border-radius: 15px; /* Ajusta este valor según sea necesario */
-        
+        border-radius: 15px; 
         }
 
         #videoPresentacion {
-                border-radius: 50px; /* Ajusta este valor según sea necesario */
+                border-radius: 50px; 
         
         }     
 
-/* .BarraInformacion1 {
+.BarraInformacion1 {
         width: 100%;
-        height: 150px;
+        height: 100px;
+        background-color: #fc8d72;
         max-width: 1200px;
         margin: auto;
         display: flex;
-        justify-content:end;
-        background-image: url('assets/images/banner_topxx.png'); 
-        background-size: cover; 
-        background-repeat: no-repeat; 
-                } */
+        justify-content: center;
+        align-items: center;
+        font-size: 35px;
+        gap: 10px;
+        border-radius: 15px;
+        
+
+}
    
 .ContainerFinJuego {
         
@@ -118,30 +121,15 @@ body {
 
 #timer {
         font-size: 2rem; /* Tamaño de fuente similar a h3 */
-        font-weight: bold; /* Puedes ajustar esto según tus preferencias */
+        font-weight: bold; 
         
       }
 
 
 #videoPresentacion {
-        border-radius: 50px; /* Ajusta este valor según sea necesario */
+        border-radius: 50px; 
 
 }      
-/* a:link {
-    color: rgb(244, 244, 247);
-   }
-   
-   a:visited {
-    color: purple;
-   }
-   
-   a:hover {
-    color: rgb(21, 255, 0);
-   }
-   
-   a:active {
-    color: yellow;
-   } */
 
 .miAudio {
 display: none;
