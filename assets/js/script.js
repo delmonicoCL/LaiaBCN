@@ -53,8 +53,15 @@
       // Crea y asigna las imágenes en el orden aleatorio a los elementos img
       for (var i = 0; i < galeria.length; i++) {
         let j = i + 1;
-        let cadaImagenQuevoyApintar = "<img id='" + galeria[i].id + "' class='DragContainer' src='" + galeria[i].src + "' draggable='true' ondragstart='drag(event)' areaDondeSoltar='" + galeria[i].area + "'></img>";
-        grilla.innerHTML += cadaImagenQuevoyApintar;
+        const nuevaImg = document.createElement('img');
+        nuevaImg.id = galeria[i].id;
+        nuevaImg.className = 'DragContainer';
+        nuevaImg.src= galeria[i].src;
+        nuevaImg.setAttribute('draggable','true');
+        nuevaImg.setAttribute('ondragstart','drag(event)');
+        nuevaImg.setAttribute('areaDondeSoltar',galeria[i].area);
+     
+        grilla.appendChild(nuevaImg);
       }
     }
 
