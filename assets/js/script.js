@@ -255,9 +255,12 @@ document.addEventListener("drop", verificarRompecabezasCompleto);
             Swal.fire({
               
               
-              imageUrl: "https://raw.githubusercontent.com/delmonicoCL/LaiaBCN/main/assets/images/tiempo.png",
-              imageWidth: 800,
+              imageUrl: "https://raw.githubusercontent.com/delmonicoCL/LaiaBCN/main/assets/images/tiempo2.jpg",
+                            imageWidth: 400,
               imageHeight: 400,
+              color: "#716add",
+              background: "#fff url(/assets/images/tiempo.png",
+  
               showCancelButton: true,
               confirmButtonColor: '#fc8d72',
               cancelButtonColor: '#517290',
