@@ -255,7 +255,7 @@ document.addEventListener("drop", verificarRompecabezasCompleto);
             Swal.fire({
               
               
-              imageUrl: "https://unsplash.it/400/200",
+              imageUrl: "https://github.com/delmonicoCL/LaiaBCN/blob/main/assets/images/tiempo.png",
               imageWidth: 800,
               imageHeight: 400,
               showCancelButton: true,
