@@ -213,7 +213,7 @@ document.addEventListener("drop", verificarRompecabezasCompleto);
 // TEMPORIZADOR DE TIEMPO //
 
         const TIME_LIMIT = 
-        60;
+        5;
         let timePassed = 0;
         let timeLeft = TIME_LIMIT;
         let gameInterval;
@@ -254,9 +254,10 @@ document.addEventListener("drop", verificarRompecabezasCompleto);
 
             Swal.fire({
               
-              title: 'SE ACABO EL TIEMPO',
-              text: '¿ DESEAS VOLVER A JUGAR ?.',
-              icon: 'warning',
+              
+              imageUrl: "https://unsplash.it/400/200",
+              imageWidth: 800,
+              imageHeight: 400,
               showCancelButton: true,
               confirmButtonColor: '#fc8d72',
               cancelButtonColor: '#517290',
@@ -379,4 +380,18 @@ audio.addEventListener("ended", function() {
 });
 };
 
-    
+// FUNCION ESCONDER BARRAINFORMACION 1 //
+
+function mostrarBarraInformacion() {
+  // Ocultar la barra inicialmente
+  var barra = document.getElementById('BarraInformacion1');
+  barra.style.display = 'none';
+
+  // Después de 30 segundos, mostrar la barra
+  setTimeout(function () {
+    barra.style.display = 'block';
+  }, 10000);
+}
+
+// Llama a la función cuando se carga el DOM
+document.addEventListener("DOMContentLoaded", mostrarBarraInformacion);

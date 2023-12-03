@@ -96,6 +96,11 @@ body {
         
 
 }
+
+#BarraInformacion1 {
+        display: none;
+        /* Ocultar inicialmente la barra */
+}
    
 .ContainerFinJuego {
         
