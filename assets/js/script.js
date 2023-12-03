@@ -255,7 +255,7 @@ document.addEventListener("drop", verificarRompecabezasCompleto);
             Swal.fire({
               
               
-              imageUrl: "https://raw.githubusercontent.com/delmonicoCL/LaiaBCN/main/assets/images/tiempo2.jpg",
+              imageUrl: "https://raw.githubusercontent.com/delmonicoCL/LaiaBCN/main/assets/images/tiempo3.png",
                             imageWidth: 400,
               imageHeight: 400,
               color: "#716add",
