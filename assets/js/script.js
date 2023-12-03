@@ -387,10 +387,10 @@ function mostrarBarraInformacion() {
   var barra = document.getElementById('BarraInformacion1');
   barra.style.display = 'none';
 
-  // Después de 30 segundos, mostrar la barra
+  // Después de 20 segundos, mostrar la barra
   setTimeout(function () {
     barra.style.display = 'block';
-  }, 10000);
+  }, 20000);
 }
 
 // Llama a la función cuando se carga el DOM
