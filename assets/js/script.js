@@ -213,7 +213,7 @@ document.addEventListener("drop", verificarRompecabezasCompleto);
 // TEMPORIZADOR DE TIEMPO //
 
         const TIME_LIMIT = 
-        5;
+        60;
         let timePassed = 0;
         let timeLeft = TIME_LIMIT;
         let gameInterval;
@@ -256,8 +256,8 @@ document.addEventListener("drop", verificarRompecabezasCompleto);
               
               
               imageUrl: "https://raw.githubusercontent.com/delmonicoCL/LaiaBCN/main/assets/images/tiempo3.png",
-                            imageWidth: 400,
-              imageHeight: 400,
+              imageWidth: 400,
+              imageHeight: 480,
               color: "#716add",
               background: "#fff url(/assets/images/tiempo.png",
   
@@ -296,12 +296,12 @@ document.addEventListener("drop", verificarRompecabezasCompleto);
 
               }  else {
                 // Reanudar el tiempo si el usuario decide no salir
-                Swal.fire({
-                  title: '¡NOS VEMOS PRONTO!',
-                  icon:  'success',
-                  showConfirmButton: false,
-                  timer:1500,
-                })
+                // Swal.fire({
+                //   title: '¡NOS VEMOS PRONTO!',
+                //   icon:  'success',
+                //   showConfirmButton: false,
+                //   timer:1500,
+                // })
                 setTimeout(() => {
                   window.location.href = 'adios.html';
                 }, 1500);
@@ -326,37 +326,42 @@ document.addEventListener("drop", verificarRompecabezasCompleto);
         salirSound.play();
         detenerTemporizador(); 
         Swal.fire({
-        title: '¿Deseas Salir del Juego?',
-        text: 'Si sales, perderás tu progreso.',
-        icon: 'warning',
-        showCancelButton: true,
-        confirmButtonColor: '#fc8d72',
-        cancelButtonColor: '#517290',
-        confirmButtonText: 'Salir',
-        cancelButtonText: 'Volver', 
-        showClass: {
-          popup: `
-            animate__animated
-            animate__fadeInUp
-            animate__faster
-          `},
-        hideClass: {
-        popup: `
-          animate__animated
-          animate__fadeOutDown
-          animate__faster
-        `
-        },
-          
-          
-      }).then((result) => {
+              
+              
+              imageUrl: "https://raw.githubusercontent.com/delmonicoCL/LaiaBCN/main/assets/images/tiempo3.png",
+              imageWidth: 400,
+              imageHeight: 480,
+              color: "#716add",
+              background: "#fff url(/assets/images/salir.png",
+  
+              showCancelButton: true,
+              confirmButtonColor: '#517290',
+              cancelButtonColor: '#fc8d72',
+              confirmButtonText: 'SI',
+              cancelButtonText: 'NO', 
+              showClass: {
+                popup: `
+                  animate__animated
+                  animate__fadeInUp
+                  animate__faster
+                `},
+              hideClass: {
+              popup: `
+                animate__animated
+                animate__fadeOutDown
+                animate__faster
+              `
+              },
+                
+                
+            }).then((result) => {
         if (result.isConfirmed) {
-          Swal.fire({
-            title: '¡Hasta luego!',
-            icon:  'success',
-            showConfirmButton: false,
-            timer:1500,
-          })
+          // Swal.fire({
+          //   title: '¡Hasta luego!',
+          //   icon:  'success',
+          //   showConfirmButton: false,
+          //   timer:1500,
+          // })
           setTimeout(() => {
             window.location.href = 'adios.html';
           }, 1500);
