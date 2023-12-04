@@ -133,6 +133,8 @@ body {
 
 #videoPresentacion {
         border-radius: 50px;
+        width: 1200px; 
+        height: 750px;
 
 }
 
