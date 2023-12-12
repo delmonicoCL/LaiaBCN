@@ -8,15 +8,20 @@
 	<link rel="icon" href="assets/images/favicon.ico" type="image/x-icon">
 	<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@800&family=Rammetto+One&display=swap" rel="stylesheet"> 
 	<script src="https://kit.fontawesome.com/f1d3ec1e99.js" crossorigin="anonymous"></script>
-	<script src="assets/js/script.js"></script>
+	
 	<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
  <title>Mision Cumplida </title>
 	</head>
+
+    
     <body class="mt-5">
      
-        <div id="mipuntaje" class="BarraInformacion mt-5" >
-            <h3>TU PUNTAJE FUE: <span style="color:#345675">225 Puntos</span> </h3></a>
+        <div class="BarraInformacion mt-5" >
+            
+            <div id="resultadoPuntaje"></div>
+
+
         </div>
         <div class="contenedor mt-5">
         
@@ -29,14 +34,47 @@
         </div>
     
         
+        <div hidden>
+
+            <form id="formularioPuntaje">
+                <label for="juego">
+                    Juego:
+                </label>
+                <input type="text" id="juego" name="Juego" value="">
+                <br>
+                <br>
+                <label for="id">
+                    Id usuario:
+                </label>
+                <input type="text" id="id" name="Id" value="id">
+                <br>
+                <br>
+                <label for="puntuacion">
+                    Puntuacion:
+                </label>
+                <input type="text" id="puntuacion" name="Puntuacion" value="" >
+                <br>
+                <br>
+                
+            </form>
+
+        </div>
 
 
 <div class="BarraInformacion1 mt-5 d-flex justify-content-around ">
-    <a href="index.html" style="text-decoration: none; ">
-        <h2 style="color: rgb(255, 254, 252)">Salir del Juego</h2>
-    </a>
+  
+    <div>
+        <button type="submit" style="color: rgb(255, 254, 252); background: none; border: none; padding: 0; font: inherit; cursor: pointer;">
+          
+        </button>
+      <input type="submit" name="Enviar" id="enviar" value="Salir del Juego" form="formularioPuntaje">
+      
+
+    </div>
+        
+
 </div>
 
-
+<script src="assets/js/script.js"></script>
     </body>
 </html>
