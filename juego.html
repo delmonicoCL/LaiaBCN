@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="icon" href="assets/images/favicon.ico" type="image/x-icon">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@800&family=Rammetto+One&display=swap"
+        rel="stylesheet">
+    <script src="https://kit.fontawesome.com/f1d3ec1e99.js" crossorigin="anonymous"></script>
+    <script src="assets/js/script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <style>
+        body {
+            margin: 0;
+            overflow: hidden;
+        }
+
+        #container {
+            width: 1200px;
+            height: 73vh;
+            background-color: transparent;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .color-box {
+            width: 200px;
+            height: 100px;
+            margin: 0 auto;
+            margin-bottom: 10px;
+        }
+
+        .amarillo {
+            background-color: rgb(238, 255, 0);
+        }
+
+        .verde {
+            background-color: green;
+        }
+
+        .azul {
+            background-color: blue;
+        }
+
+         .marron {
+            background-color: rgb(113, 69, 14);
+        }
+
+         .gris {
+            background-color: rgb(110, 110, 125);
+        }
+        
+
+        @keyframes fall {
+            to {
+                transform: translateY(73vh);
+            }
+        }
+
+        .contenedorReciclaje {
+            display: flex;
+            height: 73vh;
+            justify-content: space-around;
+        }
+
+        .contenedorReciclaje.dragover {
+            border: 2px dashed #517290;
+        }
+
+        #contadorAmarillo,
+        #contadorVerde,
+        #contadorGris,
+        #contadorMarron,
+        #contadorAzul {
+            color: white;
+            font-size: 24px;
+        }
+    </style>
+    <title>Imagenes Cayendo</title>
+</head>
+
+<body>
+    <div class="BarraInformacion mt-5 d-flex justify-content-around" id="caida">
+        <div id="timer"></div>
+        <img src="assets/images/reloj.png">
+        <div style="color:#345675">
+        <h2 style="display: inline-block;"><p id="puntajeTotal" style="display: inline;"></p>
+        </h2>
+        </div>
+        <div onclick="confirmarSalida()"><i class="fa-solid fa-circle-xmark" style="color: #fc8d72;"></i></div>
+    </div>
+
+    <div class="container" id="container">
+        <div id="contedorReciclaje" class="contenedorReciclaje">
+            <div id="amarillo" class="color-box amarillo align-self-end" ondragover="allowDrop(event)" ondrop="drop(event)"
+                ondragleave="dragLeave(event)">
+                <span id="contadorAmarillo">0</span> <p style="text-align: center; color: gray;">AMARILLO</p>
+            </div>
+            <div id="verde" class="color-box verde align-self-end" ondragover="allowDrop(event)" ondrop="drop(event)"
+                ondragleave="dragLeave(event)">
+                <span id="contadorVerde">0</span> <p style="text-align: center;">VERDE</p>
+            </div>
+            <div id="azul" class="color-box azul align-self-end" ondragover="allowDrop(event)" ondrop="drop(event)"
+                ondragleave="dragLeave(event)" >
+                <span id="contadorAzul">0</span> <p style="text-align: center;">AZUL</p>
+            </div>
+            <div id="marron" class="color-box marron align-self-end" ondragover="allowDrop(event)" ondrop="drop(event)"
+                ondragleave="dragLeave(event)">
+                <span id="contadorMarron">0</span> <p style="text-align: center;">MARRON</p>
+            </div>
+            <div id="gris" class="color-box gris align-self-end" ondragover="allowDrop(event)" ondrop="drop(event)"
+                ondragleave="dragLeave(event)"> 
+                <span id="contadorGris">0</span> <p style="text-align: center;">GRIS</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="BarraInformacion mt-5 d-flex justify-content-around ">
+        <h2 style="color: rgb(255, 254, 252)">Arrasta el residuo a <span style="color:#517290">su contenedor</span>
+            de reciclaje</h2>
+    </div>
+
+   
+
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        const contenedorReciclaje = document.getElementById("contedorReciclaje");
+        const contadorAmarillo = document.getElementById("contadorAmarillo");
+        const contadorVerde = document.getElementById("contadorVerde");
+        const contadorAzul = document.getElementById("contadorAzul");
+        const contadorMarron = document.getElementById("contadorMarron");
+        const contadorGris = document.getElementById("contadorGris");
+        const puntajeTotalElement = document.getElementById("puntajeTotal");
+
+        let contadorActualAmarillo = 0;
+        let contadorActualVerde = 0;
+        let contadorActualAzul = 0;
+        let contadorActualMarron = 0;
+        let contadorActualGris = 0;
+        let puntajeTotal = 0;
+
+        const imagenesRecicla = [
+            { id: "Recicla0", src: "assets/images/recicla/imagen-0.png", area: "marron", puntaje: 10 },
+            { id: "Recicla1", src: "assets/images/recicla/imagen-1.png", area: "marron", puntaje: 10 },
+            { id: "Recicla2", src: "assets/images/recicla/imagen-2.png", area: "amarillo", puntaje: 10 },
+            { id: "Recicla3", src: "assets/images/recicla/imagen-3.png", area: "azul", puntaje: 5 },
+            { id: "Recicla4", src: "assets/images/recicla/imagen-4.png", area: "verde", puntaje: 5 },
+            { id: "Recicla5", src: "assets/images/recicla/imagen-5.png", area: "amarillo", puntaje: 5 },
+            { id: "Recicla6", src: "assets/images/recicla/imagen-6.png", area: "amarillo", puntaje: 5 },
+            { id: "Recicla7", src: "assets/images/recicla/imagen-7.png", area: "amarillo", puntaje: 5 },
+            { id: "Recicla8", src: "assets/images/recicla/imagen-8.png", area: "verde", puntaje: 8 },
+            { id: "Recicla9", src: "assets/images/recicla/imagen-9.png", area: "gris", puntaje: 8 },
+        ];
+
+        contenedorReciclaje.ondragover = function (event) {
+            event.preventDefault();
+            contenedorReciclaje.classList.add("dragover");
+        };
+
+        contenedorReciclaje.ondragleave = function (event) {
+            event.preventDefault();
+            contenedorReciclaje.classList.remove("dragover");
+        };
+
+        contenedorReciclaje.ondrop = function (event) {
+            event.preventDefault();
+            contenedorReciclaje.classList.remove("dragover");
+
+            const droppedItemId = event.dataTransfer.getData("text/plain");
+            const droppedItem = document.getElementById(droppedItemId);
+
+            const areaImagen = imagenesRecicla.find(img => img.id === droppedItemId)?.area;
+            const puntajeImagen = imagenesRecicla.find(img => img.id === droppedItemId)?.puntaje;
+
+            if (!areaImagen || !puntajeImagen) return;
+
+            // Verifica si se soltó en el área correcta
+            if (event.target.classList.contains(areaImagen)) {
+                // Remueve la imagen del DOM
+                droppedItem.remove();
+
+                switch (areaImagen) {
+                    case "amarillo":
+                        contadorActualAmarillo++;
+                        contadorAmarillo.textContent = contadorActualAmarillo;
+                        break;
+                    case "verde":
+                        contadorActualVerde++;
+                        contadorVerde.textContent = contadorActualVerde;
+                        break;
+                    case "azul":
+                        contadorActualAzul++;
+                        contadorAzul.textContent = contadorActualAzul;
+                        break;
+                    case "marron":
+                        contadorActualMarron++;
+                        contadorMarron.textContent = contadorActualMarron;
+                        break;
+                    case "gris":
+                        contadorActualGris++;
+                        contadorGris.textContent = contadorActualGris;
+                        break;    
+                }
+
+                puntajeTotal += puntajeImagen;
+                puntajeTotalElement.textContent = "Puntaje Total: " + puntajeTotal;
+            }
+        };
+
+        function createFallingImage() {
+            const randomImage = imagenesRecicla[Math.floor(Math.random() * imagenesRecicla.length)];
+
+            const img = document.createElement("img");
+            img.src = randomImage.src;
+            img.style.position = "absolute";
+            img.style.width = "75px";
+            img.style.top = "0";
+            img.style.left = Math.random() * (contenedorReciclaje.offsetWidth - 100) + "px";
+
+            img.draggable = true;
+            img.id = randomImage.id;
+
+            img.ondragstart = function (event) {
+                event.dataTransfer.setData("text/plain", randomImage.id);
+            };
+
+            contenedorReciclaje.appendChild(img);
+
+            img.animate([
+                { transform: "translateY(0)" },
+                { transform: "translateY(73vh)" }
+            ], {
+                duration: 10000,
+                easing: "linear"
+            }).onfinish = function () {
+                // Remueve la imagen del DOM
+                img.remove();
+            };
+        }
+
+        setInterval(createFallingImage, 5000);
+    });
+</script>
+
+
+
+
+
+    <!-- <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const contenedorReciclaje = document.getElementById("contedorReciclaje");
+            const contadoramarillo = document.getElementById("contadoramarillo");
+            const contadorVerde = document.getElementById("contadorVerde");
+            const contadorAzul = document.getElementById("contadorAzul");
+            let contadorActualamarillo = 0;
+            let contadorActualVerde = 0;
+            let contadorActualAzul = 0;
+
+            contenedorReciclaje.ondragover = function (event) {
+                event.preventDefault();
+                contenedorReciclaje.classList.add("dragover");
+            };
+
+            contenedorReciclaje.ondragleave = function (event) {
+                event.preventDefault();
+                contenedorReciclaje.classList.remove("dragover");
+            };
+
+            contenedorReciclaje.ondrop = function (event) {
+                event.preventDefault();
+                contenedorReciclaje.classList.remove("dragover");
+
+                const droppedItemId = event.dataTransfer.getData("text/plain");
+                const droppedItem = document.getElementById(droppedItemId);
+
+                if (event.target.id === "amarillo") {
+                    event.target.appendChild(droppedItem);
+                    droppedItem.style.position = "static";
+                    contadorActualamarillo++;
+                    contadoramarillo.textContent = contadorActualamarillo;
+                } else if (event.target.id === "verde") {
+                    event.target.appendChild(droppedItem);
+                    droppedItem.style.position = "static";
+                    contadorActualVerde++;
+                    contadorVerde.textContent = contadorActualVerde;
+                } else if (event.target.id === "azul") {
+                    event.target.appendChild(droppedItem);
+                    droppedItem.style.position = "static";
+                    contadorActualAzul++;
+                    contadorAzul.textContent = contadorActualAzul;
+                }
+            };
+
+            const imagenesRecicla = [
+                { id: "Recicla1", src: "assets/images/recicla/imagen-0.png", area: "amarillo" },
+                { id: "Recicla2", src: "assets/images/recicla/imagen-1.png", area: "amarillo" },
+                { id: "Recicla3", src: "assets/images/recicla/imagen-2.png", area: "amarillo" },
+                { id: "Recicla4", src: "assets/images/recicla/imagen-3.png", area: "verde" },
+                { id: "Recicla5", src: "assets/images/recicla/imagen-4.png", area: "verde" },
+                { id: "Recicla6", src: "assets/images/recicla/imagen-5.png", area: "verde" },
+                { id: "Recicla7", src: "assets/images/recicla/imagen-6.png", area: "verde" },
+                { id: "Recicla8", src: "assets/images/recicla/imagen-7.png", area: "verde" },
+                { id: "Recicla9", src: "assets/images/recicla/imagen-8.png", area: "azul" }
+            ];
+
+            function createFallingImage() {
+                const randomImage = imagenesRecicla[Math.floor(Math.random() * imagenesRecicla.length)];
+
+                const img = document.createElement("img");
+                img.src = randomImage.src;
+                img.style.position = "absolute";
+                img.style.width = "100px";
+                img.style.top = "0";
+                img.style.left = Math.random() * (contenedorReciclaje.offsetWidth - 100) + "px";
+
+                img.draggable = true;
+                img.id = "img-" + Math.random();
+                img.ondragstart = function (event) {
+                    event.dataTransfer.setData("text/plain", img.id);
+                };
+
+                contenedorReciclaje.appendChild(img);
+
+                img.animate([
+                    { transform: "translateY(0)" },
+                    { transform: "translateY(73vh)" }
+                ], {
+                    duration: 7000,
+                    easing: "linear"
+                }).onfinish = function () {
+                    contenedorReciclaje.removeChild(img);
+                };
+            }
+
+            setInterval(createFallingImage, 5000);
+        });
+    </script> -->
+</body>
+
+</html>
