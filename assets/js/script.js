@@ -259,7 +259,8 @@ document.addEventListener("drop", verificarRompecabezasCompleto);
               imageWidth: 400,
               imageHeight: 480,
               color: "#716add",
-              background: "#fff url(./assets/images/salir.png",
+              
+              background: "#fff url(:/assets/images/tiempo.png)",
   
               showCancelButton: true,
               confirmButtonColor: '#fc8d72',
@@ -332,7 +333,7 @@ document.addEventListener("drop", verificarRompecabezasCompleto);
               imageWidth: 400,
               imageHeight: 480,
               color: "#716add",
-              background: "#fff url(./assets/images/salir.png",
+              background: "https://raw.githubusercontent.com/delmonicoCL/LaiaBCN/main/assets/images/salir.png",
   
               showCancelButton: true,
               confirmButtonColor: '#517290',
