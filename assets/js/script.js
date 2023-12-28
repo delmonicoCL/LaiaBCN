@@ -375,7 +375,7 @@ function mostrarBarraInformacion() {
   // Después de 20 segundos, mostrar la barra
   setTimeout(function () {
     barra.style.display = "block";
-  }, 5000);
+  }, 12000);
 }
 
 // Llama a la función cuando se carga el DOM
