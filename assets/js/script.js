@@ -352,7 +352,7 @@ function confirmarSalida() {
 
 window.onload = function sonido() {
   var audio = document.getElementById("miAudio");
-  audio.volume = 0.2; // Establecer volumen al 20%
+  audio.volume = 0.1; // Establecer volumen al 20%
   audio.play(); // Reproducir automáticamente el archivo de audio
 
   audio.addEventListener("ended", function () {
